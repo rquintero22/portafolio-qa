@@ -15,19 +15,26 @@
     <h1 class="rk-logo"><a routerLink="">{{ infoPaginaService.info.titulo }}<sup>tm</sup></a></h1>
     <nav class="rk-navigation">
       <ul class="rk-menu">
-        <li class="rk-menu__item" routerLinkActive="active"><a routerLink="home" class="rk-menu__link">Home</a>
+        <li class="rk-menu__item" routerLinkActive="active">
+          <a routerLink="home" class="rk-menu__link">Home</a>
         </li>             
-        <li class="rk-menu__item" routerLinkActive="active"><a routerLink="about" class="rk-menu__link">About</a>
+        <li class="rk-menu__item" routerLinkActive="active">
+          <a routerLink="about" class="rk-menu__link">About</a>
+        </li>
+        <li class="rk-menu__item" routerLinkActive="active">
+          <a routerLink="contact" class="rk-menu__link">Contactenos</a>
         </li>
       </ul>
-      <form class="rk-search">
-        <input type="text" placeholder="Search" id="urku-search" class="rk-search-field">
+      <div class="rk-search">
+        <input (keyup.enter)="buscarProducto( txtBuscar.value )" 
+            #txtBuscar
+            type="text" placeholder="Buscar..." id="urku-search" class="rk-search-field">
         <label for="urku-search">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-search"></use>
           </svg>
         </label>
-      </form>
+      </div>
     </nav>
   </div>
 </header>
